@@ -34,14 +34,6 @@
         "no-console": [
             false
         ],
-        "typedef": [
-            true,
-            "parameter",
-            "member-variable-declaration",
-            "arrow-parameter",
-            "property-declaration",
-            "variable-declaration"
-        ],
         "no-magic-numbers": [
             true
         ],

@@ -1,23 +1,15 @@
 import * as React from 'react';
-import { ComponentClass } from 'react';
-import * as ReactDOM from 'react-dom';
+import { render } from 'react-dom';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import todoApp from './reducers';
+import App from './components/App';
 
-import { AppContainer } from 'react-hot-loader';
-import { App } from './containers';
+let store = createStore(todoApp);
 
-import './types/globals';
-
-function render (Root: ComponentClass): void {
-    ReactDOM.render(
-        <AppContainer>
-            <Root />
-        </AppContainer>,
-    document.getElementById('root')
-  );
-}
-
-render(App);
-
-if (module.hot) {
-    module.hot.accept('./containers', () => { render(App); });
-}
+render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root')
+);
