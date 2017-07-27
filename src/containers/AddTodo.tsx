@@ -4,7 +4,7 @@ import * as Redux from 'redux';
 import { addTodo } from '../actions';
 
 interface Props {
-    dispatch: () => any;
+    dispatch: Redux.Dispatch;
 }
 
 function AddTodo ({ dispatch }: Props) {
