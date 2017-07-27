@@ -1,8 +1,13 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
+import * as Redux from 'redux';
 import { addTodo } from '../actions';
 
-function AddTodo ({ dispatch }) {
+interface Props {
+    dispatch: () => any;
+}
+
+function AddTodo ({ dispatch }: Props) {
     let input;
 
     return (

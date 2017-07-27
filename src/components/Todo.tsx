@@ -1,7 +1,13 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 
-const Todo = ({ onClick, completed, text }) => (
+interface Props {
+    onClick?: () => any;
+    completed?: boolean;
+    text?: string;
+}
+
+const Todo: React.SFC<Props> = ({ onClick, completed, text }: Props) => (
   <li
     onClick={onClick}
     style={{

@@ -106,7 +106,15 @@
             "check-module"
         ],
         "member-access": false,
-        "prefer-object-spread": true
+        "prefer-object-spread": true,
+        "typedef": [
+            true,
+            "parameter",
+            "member-variable-declaration",
+            "arrow-parameter",
+            "property-declaration",
+            "variable-declaration"
+        ]
     },
     "rulesDirectory": []
 }

@@ -1,7 +1,14 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 
-const Link = ({ active, children, onClick }) => {
+interface Props {
+    active?: boolean;
+    children?: React.ReactChildren;
+    onClick?: () => any;
+}
+
+const Link: React.SFC<Props> = (props: Props) => {
+    const {children, active, onClick} = props;
     if (active) {
         return <span>{children}</span>;
     }
@@ -9,7 +16,7 @@ const Link = ({ active, children, onClick }) => {
     return (
     <a
       href="#"
-      onClick={(e) => {
+      onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
           e.preventDefault();
           onClick();
       }}
